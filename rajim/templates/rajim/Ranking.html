@@ -1,0 +1,133 @@
+{% extends "rajim/base2.html" %}
+{% block content %}
+<title>{% block title %}Ranking{% endblock %}</title>
+
+	<!-- end header -->
+	<section id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="breadcrumb">
+					<li><a href="/"><i class="fa fa-home"></i></a>
+						<i class="icon-angle-right"></i></li>
+					
+					<li class="active">Ranking</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+	<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+			 <div class="col-lg-4">
+				<div class="pricing-box-alt special">
+					<div class="pricing-heading">
+						<h3><strong>Ranking</strong></h3>
+					</div>
+					<div class="pricing-terms">
+						<h6>Usuarios</h6>
+					</div>
+					<div class="pricing-content">
+					<table class="table">
+				      <thead>
+				        <tr class="bg-primary">
+				          <th>Rank!</th>
+				          <th>User</th>
+				          <th>Valoracion</th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				      	{% for rankuser in rankuser %}
+				        <tr class="bg-success">
+				          <th scope="row"><h5>{{ forloop.counter }}</h5></th>
+				          <td><h5>{{rankuser.user.username}}</h5></td>
+				          <td><h5>{{rankuser.valoracion_user}}</h5></td>
+				        </tr>
+				        {% endfor %}
+				        </tbody>
+    				</table>
+					</div>
+				
+				</div>
+				</div>
+
+			<div class="col-lg-4">
+				<div class="pricing-box-alt">
+					<div class="pricing-heading">
+						<h3><strong>Ranking</strong></h3>
+					</div>
+					<div class="pricing-terms">
+						<h6>Artistas</h6>
+					</div>
+
+					<div class="pricing-content">
+					<table class="table">
+				      <thead>
+				        <tr class="bg-primary">
+				          <th>Rank!</th>
+				          <th>Artista</th>
+				          <th>Valoracion</th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				      	{% for rankartista in rankartista %}
+				        <tr class="bg-success">
+				          <ul>
+				          <th scope="row"><h5>{{ forloop.counter }}</h5></th>
+				          <td><h5>{{rankartista.nombre_artista}}</h5></td>
+				          <td><h5>{{rankartista.valoracion_artista}}</h5></td>
+				        </tr>
+				        </ul>
+				        {% endfor %}
+				        </tbody>
+    				</table>
+					</div>
+				
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="pricing-box-alt special">
+					<div class="pricing-heading">
+						<h3><strong>Ranking</strong></h3>
+					</div>
+					<div class="pricing-terms">
+						<h6>Disco</h6>
+					</div>
+					<div class="pricing-content">
+
+
+					<table class="table">
+				      <thead>
+				        <tr class="bg-primary">
+				          <th>Rank!</th>
+				          <th>Disco</th>
+				          <th>Valoracion</th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				      	{% for rankdisco in rankdisco %}
+				        <tr class="bg-success">
+				          <ul>
+				          <th scope="row"><h5>{{ forloop.counter }}</h5></th>
+				          <td><h5>{{rankdisco.nombre_disco}}</h5></td>
+				          <td><h5>{{rankdisco.valoracion_disco}}</h5></td>
+				        </tr>
+				        </ul>
+				        {% endfor %}
+				        </tbody>
+    				</table>
+	  			</div>
+					
+				</div>
+			</div>
+
+		</div>
+		</div>
+	
+
+	</section>
+
+{% endblock content %}

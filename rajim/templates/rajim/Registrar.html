@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Registro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="/static/Fingeso/favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="/static/Fingeso/css2/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/Fingeso/css2/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/Fingeso/css2/animate-custom.css" />
+
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="row">
+
+        <div class="container">
+            <!-- Codrops top bar -->
+             <div class="col-md-6">
+
+          
+            <section>               
+                     <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="" autocomplete="on"  method="post">{% csrf_token %} 
+                                <h1> Registro </h1> 
+                                {{ form.non_field_errors }}
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.username.id_for_label }}">Nombre usuario:<h5>Crea un nombre para tu cuenta de Rajim que te ayudara a acceder a tu cuenta.</h5></label>
+                                    {{ form.username }}
+                                    {{ form.username.errors }}
+
+                                </div>
+                                 <div class="fieldWrapper">
+                                    <label for="{{ form.email.id_for_label }}">Email:<h5>Tu dirección de email se utiliza para confirmar las compras y comunicarse con el administrador.</h5></label>
+                                    {{ form.email }}
+                                    {{ form.email.errors }}
+
+                                </div>
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.password_one.id_for_label }}">Contraseña:<h5>Se recomienda usar una contraseña alfanumerica mayor a 8 caracteres.</h5></label>
+                                    {{ form.password_one }}
+                                    {{ form.password_one.errors }}
+
+                                </div>
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.password_two.id_for_label }}">Confirmar contraseña:</label>
+                                    {{ form.password_two }}
+                                    {{ form.password_two.errors }}
+
+                                </div>
+                                <!-- {{ form.as_p }}     -->                                            
+                                
+                                <p class="signin button"> 
+                                    <input type="submit" name="submit" value="Registrar"/>
+                                </p>
+
+
+                            </form>
+                                <p class="change_link">  
+
+                                </p>
+
+                        </div>
+
+                        
+                    </div>
+                </div>  
+
+            </section>
+
+        </div>
+              <div class="col-md-6">
+
+          
+            <section>               
+                     <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="" autocomplete="on"  method="post">{% csrf_token %} 
+                               <h1>Motivos para unirse a Ramji  </h1> 
+                               <li>Informate acerca de lo último en la escena musical.</li>
+                                <li>Tu opinion aquí vale.</li>
+                               <li>Mientras mas participes comentando y puntuando, tendrás mas descuentos en álbumes.</li>
+                               <br>
+                               <br>
+
+
+                               <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Para mas información comunicate a ramji@gmail.com .
+
+                            </form>
+                                <p class="change_link">  
+                                </p>
+
+                        </div>
+
+                        
+                    </div>
+                </div>  
+
+            </section>
+
+        </div>
+        
+        
+        </div>
+        </div>
+
+    </body>
+</html>
+

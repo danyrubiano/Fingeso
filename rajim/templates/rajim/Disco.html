@@ -1,0 +1,103 @@
+{% extends "rajim/base2.html" %}
+{% block content %}
+
+<title>{% block title %}Disco{% endblock %}</title>
+  <!-- end header -->
+  <section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="breadcrumb">
+          <li><a href="/"><i class="fa fa-home"></i></a>
+            <i class="icon-angle-right"></i></li>
+          
+          <li><a href="">Buscar</a><i class="icon-angle-right"></i></li>
+          <li><a href="/rajim/BusquedaDisco.html">Disco</a><i class="icon-angle-right"></i></li>
+          <li class="active">{{disco.nombre_disco}}</li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+  </section>
+  
+  <div id="w">    
+       
+    <div class="crsl-items" data-navigation="navbtns">
+      <div class="crsl-wrap">
+        <div class="crsl-item">
+          <div class="thumbnail">
+           
+            <img src="/media/{{disco.caratula}}" alt=""width="380" height="300">
+            <span class="postdate">{{disco.fecha_lanzamiento}}</span>
+          </div>
+          <h3><a href="#">{{disco.nombre_disco}}</a></h3>
+         </div>
+      </div>
+    </div>
+
+        <hr>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4"> 
+                <p ><strong>"{{disco.nombre_disco}}"</strong> - Álbum musical de {{disco.id_artista}}</p>
+                <p >--------------------------</p>
+                <p ><strong>Fecha de publicación:</strong> {{disco.fecha_lanzamiento}}</p>
+                <p ><strong>Artista:</strong> {{disco.id_artista}}</p>
+                <p ><strong>Calificacion :</strong> {{disco.valoracion_disco}} </p>
+                <p><strong>Reseña :</strong>{{disco.resena}}</p>
+                
+                 <br>
+
+                 <strong class="choice">Evalualo!</strong>
+                 <br>
+                 <div id="jRate" style="height:50px;width: 200px;"></div>
+                                    <iframe class="youtube-player" type="text/html" width="380" height="300" src="{{disco.video}}"frameborder="0"></iframe>
+
+            </div>
+            <div class="col-lg-4">
+
+              <div class="list-group">
+                <a href="#" class="list-group-item active">Canciones de {{disco.nombre_disco}}</a>
+                  {% for cancion in canciones%}
+                <a href="#" class="list-group-item"><p>{{cancion.nombre_cancion}}</p></a>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+    <br>
+    <br>
+
+    
+ 
+
+    <div class="container">
+      <div class="col-lg-12">
+      <form  action=""  method="post"> 
+        <h1></h1> 
+           {% csrf_token %}    <hr>
+            <p>Titulo:{{ form.titulo }}</p><br>
+            <p>Comentario: {{ form.comentario }}</p><br>
+
+            {% for comentario in comentarios%}
+            <p>{{comentario.titulo}}</p>
+                {% endfor %}
+            
+          <p class="login button"> <input type="submit" value="Enviar" /> </p>
+      </form>
+      </div>                        
+    </div>                        
+ 
+ 
+
+
+
+{% endblock content %}
+

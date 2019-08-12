@@ -1,0 +1,81 @@
+{% extends "rajim/base2.html" %}
+{% block content %}
+
+<title>{% block title %}Artista{% endblock %}</title>
+  <!-- end header -->
+  <section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="breadcrumb">
+          <li><a href="/"><i class="fa fa-home"></i></a>
+            <i class="icon-angle-right"></i></li>
+          
+          <li><a href="/rajim/BusquedaArtista.html">Buscar</a><i class="icon-angle-right"></i></li>
+          <li><a href="/rajim/BusquedaArtista.html">Artista</a><i class="icon-angle-right"></i></li>
+          <li class="active">{{artista.nombre_artista}}</li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+ 
+  </section>
+  
+  <div id="w">    
+       
+    <div class="crsl-items" data-navigation="navbtns">
+      <div class="crsl-wrap">
+        <div class="crsl-item">
+          <div class="thumbnail">
+           
+            <img src="/media/{{artista.foto}}" alt=""width="380" height="300">
+            <span class="postdate">{{artista.fecha_nacimiento_artista}}</span>
+          </div>
+          <h3><a href="#">{{artista.nombre_artista}}</a></h3>
+
+          <div class="col-lg-12">
+            <hr>
+            <div class="col-lg-6">
+              <br>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <p ><strong>Artista:</strong> {{artista.nombre_artista}}</p>
+                    <p ><strong>Fecha de nacimiento:</strong> {{artista.fecha_nacimiento_artista}}</p>
+                    <p ><strong>Calificacion :</strong> {{artista.valoracion_artista}} </p>
+                    <p><strong>Reseña :</strong>{{artista.resena}}</p>
+                    <strong class="choice">Evalualo!</strong>
+                    <br>
+                    <div id="jRate" style="height:50px;width: 200px;"></div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="list-group">
+                      <a href="#" class="list-group-item active">Discos de {{artista.nombre_artista}}</a>
+                      {% for i in disco %}
+                      <a href="/rajim/Disco/{{i.id_disco}}" class="list-group-item"><p>{{i.nombre_disco}}</p></a>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+            
+        </div>
+      </div><!-- post #1 -->       
+    </div><!-- @end .crsl-wrap -->
+  </div><!-- @end .crsl-items -->
+    
+
+
+
+
+
+{% endblock content %}
